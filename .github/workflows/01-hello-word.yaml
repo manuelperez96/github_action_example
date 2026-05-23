@@ -1,6 +1,6 @@
 name: 01-hello-world
 
-on: 
+on:
     push:
         branches: [main]
 
@@ -12,5 +12,13 @@ jobs:
               run: echo "Hola desde github action"
             - name: Fecha
               run: date
+            - name: Ver archivos disponibles
+              run: ls -la
+
+    repo-files:
+        runs-on: ubuntu-24.04
+        steps:
+            - name: Descargar archivos del repo
+              uses: actions/checkout@v6
             - name: Ver archivos disponibles
               run: ls -la
